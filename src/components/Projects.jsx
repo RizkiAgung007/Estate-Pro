@@ -63,7 +63,7 @@ const Projects = () => {
                                     { project.title }
                                 </h2>
                                 <p className='text-gray-500 text-sm'>
-                                    { project.price} <span> </span> { project.location }
+                                    { project.price} <span className='px-2'> | </span> { project.location }
                                 </p>
                             </div>
                         </div>    
