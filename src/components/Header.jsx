@@ -1,12 +1,19 @@
 import React from 'react'
 import Navbar from './navbar'
+import { motion } from 'motion/react'
 
 const Header = () => {
   return (
     <div className='min-h-screen w-full mb-4 bg-cover bg-center flex items-center overflow-hidden' 
     style={{backgroundImage: "url('/header_img.png')"}} id='Header'>
         <Navbar />
-        <div className='container text-center mx-auto py-4 px-6 md:px-20 lg:px-32 text-white'>
+        <motion.div 
+        initial ={{opacity: 0, y:200}}
+        transition={{duration: 1.5}}
+        animate={{opacity: 1, y: 0}}
+        whileInView={{opacity: 1, y: 0}}
+        viewport={{once: true}}
+        className='container text-center mx-auto py-4 px-6 md:px-20 lg:px-32 text-white'>
             <h2 className='text-3xl sm:text-5xl inline-block max-w-3xl font-semibold pt-20'>Welcome to our Website, Explore homes that fit your dreams</h2>
             <p className='pt-2 md:text-xl sm:text-2xl inline-block text-base'>Discover our selection of luxurious homes, each designed with a personal touch</p>
             <div className="space-x-6 mt-18">
@@ -19,7 +26,7 @@ const Header = () => {
                     Contact
                 </a>
             </div>
-        </div>
+        </motion.div>
     </div>
   )
 }
